@@ -12,8 +12,13 @@ public class Pair implements Comparable<Pair>{
     private Integer projectId;
 
     public Pair(Employee left, Employee right, Integer projectId) {
-        this.left = left;
-        this.right = right;
+        if(left.getEmployeeId() < right.getEmployeeId()){
+            this.left = left;
+            this.right = right;
+        } else {
+            this.left = right;
+            this.right = left;
+        }
         this.projectId = projectId;
     }
 
